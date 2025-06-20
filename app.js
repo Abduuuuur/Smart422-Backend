@@ -11,13 +11,14 @@ const userRoutes = require('./routes/userRoutes');
 const weatherRoutes = require('./routes/weatherRoutes');
 
 
-
  // <-- create app here BEFORE using it
 
  app.use(cors({
-  origin: 'https://smart422-project-k676.vercel.app', // ✅ Use full Vercel URL
-  credentials: true
+  origin: '*',
+  credentials: true,  // note : credentials ne fonctionne pas avec origin '*'
 }));
+
+
 app.use(express.json());
 app.use('/api/weather', weatherRoutes);
 
