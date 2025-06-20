@@ -15,10 +15,9 @@ const weatherRoutes = require('./routes/weatherRoutes');
  // <-- create app here BEFORE using it
 
  app.use(cors({
-  origin: 'https://ysmart422-project-k676.vercel.app',
-  credentials: true,
+  origin: 'https://mart422-project-k676.vercel.app', // ✅ Use full Vercel URL
+  credentials: true
 }));
-
 app.use(express.json());
 app.use('/api/weather', weatherRoutes);
 
