@@ -6,11 +6,16 @@ const cors = require('cors');
 const sequelize = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const weatherRoutes = require('./routes/weatherRoutes');
+
+
 
  // <-- create app here BEFORE using it
 
 app.use(cors());
+
 app.use(express.json());
+app.use('/api/weather', weatherRoutes);
 
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
